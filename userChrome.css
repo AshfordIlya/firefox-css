@@ -1,0 +1,581 @@
+﻿@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+/* COLORS */
+
+/** DESCRIPTION : set the colors used **/
+:root {
+	--focus-bg: #EBEBEB !important;
+	--nav-bg: #F7F7F8 !important;
+	--tab-bg: #000 !important;
+	--tool-bg: #F2F2F2 !important;
+	--url-bg: #FFF !important;
+	--tab-bg-select: #F7F7F8 !important;
+	--border-color: #E1E2E2 !important;
+	--border-color-2: #BEBEBE !important;
+	--primary-color: #212121 !important;
+	--invert: invert(0) !important;
+}
+
+/* GENERAL */
+
+/** DESCRIPTION : set the main font and others details **/
+* {
+	font-family: "Roboto", "ぼくたちのゴシック２ボールド" !important;
+}
+
+.titlebar-buttonbox-container {
+	display: none;
+}
+
+*::-moz-focus-inner {
+	border: 0;
+}
+
+html {
+	overflow: auto;
+}
+
+#downloads-indicator-anchor,
+.toolbarbutton-1>.toolbarbutton-icon,
+.toolbarbutton-1>.toolbarbutton-badge-stack>.toolbarbutton-icon {
+	filter: brightness(1) invert(0) !important;
+}
+
+#PersonalToolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover,
+.tabbrowser-arrowscrollbox>.scrollbutton-up:not([disabled="true"]):hover,
+.tabbrowser-arrowscrollbox>.scrollbutton-down:not([disabled="true"]):hover,
+.findbar-button:not(:-moz-any([checked="true"], [disabled="true"])):hover>.toolbarbutton-text,
+toolbarbutton.bookmark-item:not(.subviewbutton):hover:not([disabled="true"]):not([open]),
+toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover>.toolbarbutton-icon,
+toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover>.toolbarbutton-text,
+toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover>.toolbarbutton-badge-stack {
+	background-color: transparent !important;
+}
+
+/* #tabbrowser-tabs,
+#tabbrowser-arrowscrollbox {
+	min-height: 0 !important;
+} */
+
+/* Hide Tab bar with only one Tab - [110] */
+#tabbrowser-tabs .tabbrowser-tab:only-of-type,
+#tabbrowser-tabs .tabbrowser-tab:only-of-type+#tabbrowser-arrowscrollbox-periphery {
+	display: none !important;
+}
+
+#tabbrowser-tabs,
+#tabbrowser-arrowscrollbox {
+	min-height: 0 !important;
+}
+
+/* #TabsToolbar:not(:hover) */
+#alltabs-button {
+	display: none !important;
+}
+
+#unified-extensions-button {
+	display: none !important;
+}
+
+/* Suppress blue dot on pinned tab */
+.tabbrowser-tab>.tab-stack>.tab-content[pinned][titlechanged]:not([selected="true"]) {
+	background-size: 0px 0px !important;
+}
+
+.autocomplete-history-dropmarker.urlbar-history-dropmarker,
+#identity-box,
+#page-action-buttons,
+.panel-arrow,
+.search-one-offs,
+#sidebar-header,
+#stop-reload-button,
+#tabs-newtab-button,
+#TabsToolbar .tabbrowser-tab:after,
+#TabsToolbar .tabbrowser-tab:before,
+.titlebar-min,
+#titlebar-min,
+.titlebar-max,
+#titlebar-max,
+.titlebar-button.titlebar-restore,
+.titlebar-placeholder[type="pre-tabs"],
+.titlebar-spacer[type="pre-tabs"],
+#tracking-protection-icon-container,
+#PanelUI-menu-button {
+	display: none !important;
+}
+
+/* POPUP */
+
+/** DESCRIPTION : change the elements of the popup dialog **/
+[class^=PanelUI-],
+#downloadsFooterButtons,
+#downloadsListBox,
+#emptyDownloads,
+.panel-subview-body,
+.panel-subview-footer,
+menupopup,
+menupopup>menu>menupopup,
+popup,
+popup>menu>menupopup {
+	-moz-appearance: none !important;
+	background: #F7F7F8 !important;
+	border: none !important;
+}
+
+menupopup,
+menupopup>menu>menupopup,
+popup,
+popup>menu>menupopup {
+	padding: 10px !important;
+}
+
+menuitem,
+menupopup menu {
+	-moz-appearance: none !important;
+	color: #212121 !important
+}
+
+menupopup menuseparator {
+	-moz-appearance: none !important;
+	background: rgba(0, 0, 0, 0) !important;
+	border: 0 !important;
+}
+
+
+
+#context-navigation menuitem,
+.panel-arrowcontent {
+	background-color: #F7F7F8 !important;
+	color: #212121 !important;
+	padding-bottom: 10px !important;
+}
+
+#context-navigation,
+#context-sep-navigation {
+	padding: 0 !important;
+}
+
+/* TOOLBAR */
+
+/** DESCRIPTION : change the elements in the toolbar **/
+#navigator-toolbox {
+	/*** TOOLBAR TOOLBOX ***/
+	background: #F7F7F8 !important;
+
+}
+
+#navigator-toolbox>toolbar {
+	box-shadow: none !important;
+}
+
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab:nth-child(1 of :not([pinned], [hidden])) {
+	margin-inline-start: unset !important;
+}
+
+#navigator-toolbox toolbar #menubar-items {
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+	margin-left: 10px !important;
+}
+
+#navigator-toolbox toolbar #menubar-items * {
+	color: #212121;
+	font-size: 10pt !important;
+}
+
+/* PERSONAL TOOLBAR */
+
+/** DESCRIPTION : change the elements of the personal toolbar **/
+#PersonalToolbar {
+	height: 50px !important;
+	padding-top: 2px !important;
+}
+
+/* TABBAR */
+
+/** DESCRIPTION : change the elements in the tabbar **/
+
+#TabsToolbar {
+	/*** TABBAR TOOLBAR ***/
+	background: #F2F2F2 !important;
+	border-top: 1px solid #E1E1E2 !important;
+	border-bottom: 1px solid #E1E1E2 !important;
+	margin-bottom: 0 !important;
+}
+
+#statuspanel-label {
+	display: none !important;
+}
+
+
+.tabbrowser-tab {
+	/*** TABBAR TABS ***/
+	background: #f2f2f2 !important;
+	border-right: none !important;
+	color: #262626 !important;
+	margin-bottom: 1px !important;
+}
+
+.tab-background[selected="true"] {
+
+	/*** TABBAR TABS SELECTED ***/
+	background: #F7F7F8 !important;
+	/* height: 54px !important;
+	margin-top: -3px !important; */
+}
+
+.tabbrowser-tab[selected="true"] {
+	color: #212121 !important;
+}
+
+
+.tab-content[pinned] {
+
+	/*** TABBAR TABS PINNED ***/
+	width: 40px !important;
+	text-indent: 0px !important;
+}
+
+.tab-content[pinned] .tab-icon-stack {
+	margin-left: 2px !important;
+}
+
+.tab-label-container[pinned] {
+	display: none !important;
+}
+
+.tab-label-container {
+
+	/*** TABBAR TABS CONTENT ***/
+	font-size: 10pt !important;
+	padding-left: 5px !important;
+}
+
+
+
+#tabbrowser-tabs .tab-close-button {
+
+	/*** TABBAR TABS CLOSE BUTTON ***/
+	background: url('http://imgur.com/4GlrMN7.png') no-repeat 50% 50%;
+	background-size: 20px auto !important;
+	height: 0px !important;
+	width: 0px !important;
+	padding: 10px 0 0 20px !important;
+	opacity: .7 !important;
+	margin-right: 5px !important;
+	filter: brightness(0) invert(0) !important;
+	visibility: hidden;
+}
+
+#tabbrowser-tabs .tab-close-button:hover {
+	background: url("http://i.imgur.com/tssw3Nx.png") no-repeat 50% 50% !important;
+	background-size: 20px auto !important;
+	padding: 10px 0 0 20px !important;
+	opacity: .5 !important;
+	visiblity: visible;
+}
+
+.tabbrowser-tab[selected="true"] {
+	--tab-label-mask-size: 1em !important;
+}
+
+.titlebar-close,
+#titlebar-close {
+
+	/*** TABBAR CLOSE BUTTON ***/
+	list-style-image: url("https://i.imgur.com/qzZ5RJH.png") !important;
+}
+
+.titlebar-close:hover,
+#titlebar-close:hover {
+	background-color: transparent !important;
+	opacity: .5 !important;
+}
+
+.titlebar-button>.toolbarbutton-icon {
+	width: 15px !important;
+	height: 15px !important;
+}
+
+/* NAVBAR */
+
+/** DESCRIPTION : change the elements of the navbar **/
+#nav-bar {
+	border-bottom: 1px solid #E8E8E9 !important;
+	padding-bottom: 11px !important;
+	margin-bottom: -1px !important;
+}
+
+#navigator-toolbox>toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
+	background: #F7F7F8 !important;
+	border-color: #E8E8E9 !important;
+
+}
+
+#urlbar-container {
+	max-width: 98% !important;
+	margin: auto !important;
+}
+
+#nav-bar #back-button>.toolbarbutton-icon {
+
+	/*** NAVBAR BACK BUTTON ***/
+	background: url("http://i.imgur.com/tONrOjq.png") !important;
+	background-repeat: no-repeat !important;
+	background-size: 30px auto !important;
+	background-position: center center !important;
+	border: none !important;
+	height: 0px;
+	width: 0px;
+	padding: 30px 0px 0px 15px !important;
+	margin-top: 0px !important;
+
+}
+
+#nav-bar #back-button#back-button#back-button>image.toolbarbutton-icon {
+	box-shadow: none !important;
+}
+
+#nav-bar #back-button {
+	list-style-image: none !important;
+	display: none !important;
+}
+
+#nav-bar #forward-button {
+
+	/*** NAVBAR FORWARD BUTTON ***/
+	background: url("http://i.imgur.com/fAZe280.png") !important;
+	background-repeat: no-repeat !important;
+	background-size: 30px auto !important;
+	background-position: center center !important;
+	border: none !important;
+	width: 0px;
+	height: 0px;
+	padding: 30px 0px 0px 15px !important;
+	margin-top: 0px !important;
+	margin-right: 0px;
+	margin-left: -10px !important;
+	filter: brightness(0) invert(0) !important;
+	display: none !important;
+}
+
+#nav-bar #home-button {
+
+	display: none !important;
+}
+
+#searchbar>.searchbar-textbox,
+#urlbar {
+
+	/*** NAVBAR URL BAR ***/
+	background: #FFF !important;
+	border: 0px solid #BEBEBE !important;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, .1) !important;
+	color: #212121 !important;
+}
+
+#searchbar>.searchbar-textbox:focus,
+#urlbar:focus-within {
+	box-shadow: 0 -1px 5px rgba(0, 0, 0, .12) !important;
+}
+
+#urlbar-background {
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	outline: none !important;
+}
+
+.urlbar-textbox-container {
+
+	/*** NAVBAR URL BAR TEXT CONTAINER ***/
+	margin-top: -1px !important;
+	margin-left: 5px !important;
+
+}
+
+moz-input-box.urlbar-input-box {
+	padding-left: 7px !important;
+}
+
+.urlbarView {
+
+	/*** NAVBAR URL BAR DROP LIST ***/
+	background: transparent !important;
+	border-color: transparent !important;
+	color: #212121 !important;
+	font-size: 11pt !important;
+	margin-top: -1px !important;
+}
+
+#PanelUI-button {
+
+	/*** NAVBAR PANEL BUTTON ***/
+	border: none !important;
+	border-image: none !important;
+}
+
+:root:not([uidensity="compact"]):not([chromehidden~="toolbar"]) #PanelUI-button #PanelUI-menu-button {
+	filter: brigthness(1) invert(0) !important;
+}
+
+/* FIND BAR */
+#nav-bar {
+	background: transparent !important;
+
+	box-shadow: none !important;
+	margin-top: -1px !important;
+	border-top-width: -1px !important;
+	margin-bottom: -1px !important;
+	border-bottom-width: -1px !important;
+}
+
+/** DESCRIPTION : change the elements of the find bar **/
+findbar {
+	background: #F7F7F8 !important;
+	border-color: #E1E1E2 !important;
+	color: #212121 !important;
+	font-size: 10pt !important;
+}
+
+.findbar-textbox,
+.findbar-find-previous,
+.findbar-find-next {
+	background: #FFF !important;
+	border-color: #BEBEBE !important;
+	color: #212121 !important;
+}
+
+.findbar-button:not([disabled="true"]):-moz-any([checked="true"],
+	:hover:active)>.toolbarbutton-text {
+	background: #EBEBEB !important;
+}
+
+/* HISTORY */
+
+/** DESCRIPTION : change the elements of the history sidebar **/
+#browser {
+	--sidebar-border-color: #E1E1E2 !important;
+}
+
+#sidebar-box {
+	background-color: #F7F7F8 !important;
+}
+
+hbox#sidebar-search-container textbox#search-box {
+	-moz-appearance: none !important;
+	background-color: #F0F0F0 !important;
+	border: 1px solid #E1E1E2 !important;
+	color: #212121 !important;
+	font-size: 10pt !important;
+}
+
+.sidebar-placesTreechildren,
+#viewButton {
+	color: #212121 !important;
+	font-size: 10pt !important;
+}
+
+.sidebar-placesTreechildren:hover {
+	background: #F0F0F0 !important;
+}
+
+/* CUSTOMIZATION */
+
+/** DESCRIPTION : change the elements of the customization page **/
+#customization-container {
+	background: #F2F2F2 !important;
+	color: #212121 !important;
+}
+
+.customizationmode-button {
+	background: #F0F0F0 !important;
+	border-color: #E1E1E2 !important;
+	color: #212121 !important;
+}
+
+:root[sizemode="normal"] #nav-bar {
+	--uc-window-drag-space-width: 20px;
+}
+
+#titlebar {
+	-moz-appearance: none !important;
+}
+
+#TabsToolbar {
+	min-height: 0px !important
+}
+
+#tabbrowser-tabs,
+#tabbrowser-tabs>.tabbrowser-arrowscrollbox,
+#tabbrowser-arrowscrollbox {
+	min-height: 0 !important;
+}
+
+:root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
+:root:not([customizing]) #tabs-newtab-button,
+:root:not([customizing]) #TabsToolbar-customization-target>.toolbarbutton-1,
+:root:not([customizing]) #TabsToolbar .titlebar-button {
+	-moz-appearance: none !important;
+	height: 0px;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	-moz-box-align: stretch;
+	margin: 0 !important;
+}
+
+.accessibility-indicator,
+.private-browsing-indicator {
+	height: unset !important;
+}
+
+.accessibility-indicator>hbox {
+	padding-block: 0 !important
+}
+
+#tabbrowser-tabs .tabbrowser-tab {
+	height: 62px;
+	/* 56px */
+}
+
+#TabsToolbar #firefox-view-button[open]>.toolbarbutton-icon,
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
+	box-shadow: 0 -1px 5px rgba(0, 0, 0, .12) !important;
+}
+
+/* #tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"] {
+	visibility: collapse !important;
+} */
+
+/* Button re-styling */
+#tabs-newtab-button:hover,
+#tabbrowser-tabs .tabs-newtab-button:hover {
+	background-color: var(--toolbarbutton-hover-background)
+}
+
+#tabs-newtab-button>.toolbarbutton-icon,
+#tabbrowser-tabs .tabs-newtab-button>.toolbarbutton-icon {
+	padding: 0 !important;
+	transform: scale(0.6);
+	background-color: transparent !important;
+}
+
+/* Extra top padding  in maximized window */
+@media (-moz-os-version: windows-win10) {
+	:root[sizemode="maximized"] #navigator-toolbox {
+		padding-top: 7px !important;
+	}
+}
+
+/* Fix window controls not being clickable */
+:root[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive] {
+	transition: height 0ms steps(1) 80ms;
+}
+
+#nav-bar {
+	border-inline: var(--uc-window-drag-space-width) solid var(--toolbar-bgcolor)
+}
+
+menupopup {
+	background: none !important;
+}
