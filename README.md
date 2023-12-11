@@ -13,8 +13,11 @@ My firefox is scaled up, to change yours goto about:config and edit layout.css.d
 # Screenshots
 Looks better in use.
 
-![Preview](https://files.catbox.moe/3sw3b4.png)
-
 ![Preview](https://files.catbox.moe/qi8u93.png)
 
 ![Preview](https://files.catbox.moe/rw9fgk.png)
+
+Single tab removes tab bar.
+![Preview](https://files.catbox.moe/fkexqe.png)
+
+![Preview](https://files.catbox.moe/3sw3b4.png)
